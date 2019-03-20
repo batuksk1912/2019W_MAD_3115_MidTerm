@@ -43,6 +43,22 @@ class Student {
         return studentName ?? "-1"
     }
     
+    func getGender() -> String {
+        return gender ?? "-1"
+    }
+    
+    func getCourseName() -> String {
+        return courseName ?? "-1"
+    }
+    
+    func getStudentEMail() -> String {
+        return studentEmail ?? "-1"
+    }
+    
+    func getBirthDate() -> String {
+        return birthDate ?? "-1"
+    }
+    
     func getPercentage() -> Float {
         return percentage ?? 0.0
     }
@@ -55,4 +71,7 @@ class Student {
         return marks ?? [0.0]
     }
     
+    func getGrade() -> String {
+        return grade ?? "-1"
+    }
 }
