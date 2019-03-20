@@ -12,7 +12,7 @@ class StudentEntryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationItem.title = "Student Entry"
         // Do any additional setup after loading the view.
     }
     
