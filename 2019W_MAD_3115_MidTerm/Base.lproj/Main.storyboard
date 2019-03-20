@@ -68,6 +68,40 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="107.49625187406298"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="8t5-fV-tCF">
+            <objects>
+                <viewController id="KD4-0N-SPk" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fFy-PX-kXA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="CMx-af-mNO"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Yoy-Ah-GGn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RVT-UG-bz6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1743" y="107"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="B4a-Fb-68x">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QeV-9G-Qb2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="D2w-LX-qNd">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="KD4-0N-SPk" kind="relationship" relationship="rootViewController" id="IZS-Rj-LfA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7aH-Y4-0UM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="996" y="107"/>
+        </scene>
     </scenes>
     <resources>
         <image name="lambton" width="144" height="175.91999816894531"/>
