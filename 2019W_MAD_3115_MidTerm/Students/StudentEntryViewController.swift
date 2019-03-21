@@ -31,6 +31,8 @@ class StudentEntryViewController: UIViewController, UIPickerViewDelegate, UIPick
     private var percentage: Float?
     private var grade: String?
     
+    private var count: Int = 0
+
     private var coursesArray : [String] = ["MAD3115","MAD3004","CBD2303","MAD3125"]
     private var selectedCourse : String?
     
@@ -79,11 +81,10 @@ class StudentEntryViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        /*if let svc = segue.destination as? StudentResultViewController {
+        if let svc = segue.destination as? StudentResultViewController {
             svc.setData(student: studentArray)
-        }*/
+        }
     }
-    
     
     @IBAction func checkResults(_ sender: UIButton) {
         if (studentId.text != nil && studentName.text != nil && email.text != nil && markOne.text != nil && markTwo.text != nil && markThree.text != nil && markFour.text != nil && markFive.text != nil && selectedCourse != nil) {
@@ -97,9 +98,41 @@ class StudentEntryViewController: UIViewController, UIPickerViewDelegate, UIPick
             
             totalMarks = (Float(markOne.text!)! + Float(markTwo.text!)! + Float(markThree.text!)! + Float(markFour.text!)! + Float(markFive.text!)!)
             percentage = (totalMarks! / 5)
-
-            studentArray.append(Student(studentId: studentId.text!, studentName: studentName.text!, gender: genderString(), courseName: selectedCourse!, studentEmail: email.text!, birthDate: date!, percentage: 100.00, totalMarks: totalMarks!, marks: marksA, grade: grade!))
+            
+            if (percentage! >= 95.0) {
+                grade = "A+"
+            } else if (percentage! >= 85.0 && percentage! < 95.0) {
+                grade = "A"
+            } else if (percentage! >= 75.0 && percentage! < 85.0) {
+                grade = "B+"
+            } else if (percentage! >= 65.0 && percentage! < 75.0) {
+                grade = "B"
+            } else if (percentage! >= 55.0 && percentage! < 65.0) {
+                grade = "C+"
+            } else if (percentage! >= 50.0 && percentage! < 55.0) {
+                grade = "C"
+            } else if (percentage! >= 45.0 && percentage! < 50.0) {
+                grade = "D+"
+            } else {
+                grade = "FAIL"
+            }
+            
+            for element in marksA {
+                if (element < 45.0) {
+                    count = count + 1
+                }
+            }
+            if (count >= 2) {
+                grade = "FAIL"
+                percentage = 0.0
+            }
+            
+            studentArray.append(Student(studentId: studentId.text!, studentName: studentName.text!, gender: genderString(), courseName: selectedCourse!, studentEmail: email.text!, birthDate: date!, percentage: percentage!, totalMarks: totalMarks!, marks: marksA, grade: grade!))
             performSegue(withIdentifier: "studentSegue", sender: nil)
+        } else {
+            let alert = UIAlertController(title: "Error", message: "Please fill and select all the fields!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true)
         }
     }
     
