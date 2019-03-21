@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04D9BF262242FADE00CE04B9 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9BF252242FADE00CE04B9 /* MainNavigationController.swift */; };
+		04D9BF2922430BEC00CE04B9 /* StudentResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9BF2822430BEC00CE04B9 /* StudentResultTableViewCell.swift */; };
 		9BAC0C062241C855002252C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAC0C052241C855002252C8 /* AppDelegate.swift */; };
 		9BAC0C082241C855002252C8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAC0C072241C855002252C8 /* LoginViewController.swift */; };
 		9BAC0C0B2241C855002252C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BAC0C092241C855002252C8 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		04D9BF252242FADE00CE04B9 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		04D9BF2822430BEC00CE04B9 /* StudentResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentResultTableViewCell.swift; sourceTree = "<group>"; };
 		9BAC0C022241C855002252C8 /* 2019W_MAD_3115_MidTerm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2019W_MAD_3115_MidTerm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BAC0C052241C855002252C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BAC0C072241C855002252C8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04D9BF2722430B9E00CE04B9 /* Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				04D9BF2822430BEC00CE04B9 /* StudentResultTableViewCell.swift */,
+			);
+			path = "Custom Cell";
+			sourceTree = "<group>";
+		};
 		9BAC0BF92241C855002252C8 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +115,7 @@
 		9BAC0C042241C855002252C8 /* 2019W_MAD_3115_MidTerm */ = {
 			isa = PBXGroup;
 			children = (
+				04D9BF2722430B9E00CE04B9 /* Custom Cell */,
 				9BAC0C362241C8A0002252C8 /* Students */,
 				9BAC0C332241C87A002252C8 /* Model */,
 				9BAC0C052241C855002252C8 /* AppDelegate.swift */,
@@ -286,6 +297,7 @@
 			files = (
 				04D9BF262242FADE00CE04B9 /* MainNavigationController.swift in Sources */,
 				9BAC0C082241C855002252C8 /* LoginViewController.swift in Sources */,
+				04D9BF2922430BEC00CE04B9 /* StudentResultTableViewCell.swift in Sources */,
 				9BAC0C352241C898002252C8 /* Student.swift in Sources */,
 				9BAC0C3A2241C8DC002252C8 /* StudentResultViewController.swift in Sources */,
 				9BAC0C382241C8C7002252C8 /* StudentEntryViewController.swift in Sources */,

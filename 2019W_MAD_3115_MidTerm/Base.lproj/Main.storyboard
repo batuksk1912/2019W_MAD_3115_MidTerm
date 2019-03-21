@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="_019W_MAD_3115_MidTerm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginVC" id="BYZ-38-t0r" customClass="LoginViewController" customModule="_019W_MAD_3115_MidTerm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -182,6 +182,9 @@
                                 <date key="date" timeIntervalSinceReferenceDate="574815885.10590303">
                                     <!--2019-03-20 23:04:45 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="datePicker:" destination="KD4-0N-SPk" eventType="valueChanged" id="2L4-8p-Sw9"/>
+                                </connections>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Student ID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kqj-9W-DCx">
                                 <rect key="frame" x="16" y="151" width="86" height="21"/>
@@ -246,6 +249,9 @@
                                 <state key="normal" title="APPLY">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="checkResults:" destination="KD4-0N-SPk" eventType="touchUpInside" id="XE3-YL-7Ke"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ALJ-Lm-F0v">
                                 <rect key="frame" x="16" y="72" width="343" height="40"/>
@@ -254,6 +260,9 @@
                                 <state key="normal" title="LOGOUT">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="logOut:" destination="KD4-0N-SPk" eventType="touchUpInside" id="ib7-10-Kml"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -266,10 +275,64 @@
                         <viewLayoutGuide key="safeArea" id="CMx-af-mNO"/>
                     </view>
                     <navigationItem key="navigationItem" id="Yoy-Ah-GGn"/>
+                    <connections>
+                        <outlet property="courses" destination="LUW-OD-UTx" id="Yve-jb-6Zx"/>
+                        <outlet property="email" destination="XWb-IM-Hp4" id="D5H-B4-zgh"/>
+                        <outlet property="gender" destination="whF-LZ-Ad1" id="yAG-MU-fhy"/>
+                        <outlet property="markFive" destination="QJC-tf-4fm" id="9Of-hU-PjH"/>
+                        <outlet property="markFour" destination="d51-LK-XBs" id="4b6-2A-DPm"/>
+                        <outlet property="markOne" destination="oih-JT-BgI" id="Idi-6e-vp4"/>
+                        <outlet property="markThree" destination="NQk-7G-Pqb" id="HGr-Ju-qr3"/>
+                        <outlet property="markTwo" destination="VhW-j2-BWO" id="Pp8-cK-OGv"/>
+                        <outlet property="studentId" destination="t4z-xq-GDn" id="OD4-fH-ih3"/>
+                        <outlet property="studentName" destination="09Q-9k-g2b" id="8ht-dk-pda"/>
+                        <segue destination="eaB-iR-16u" kind="show" identifier="studentSegue" id="2Ao-6M-yVU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RVT-UG-bz6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1741.5999999999999" y="106.59670164917542"/>
+        </scene>
+        <!--Student Result View Controller-->
+        <scene sceneID="vJt-nX-0sE">
+            <objects>
+                <viewController id="eaB-iR-16u" customClass="StudentResultViewController" customModule="_019W_MAD_3115_MidTerm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NT4-0J-dlz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lZG-e6-InE">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="210" id="JOU-YT-0gv" customClass="StudentResultTableViewCell" customModule="_019W_MAD_3115_MidTerm" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="210"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JOU-YT-0gv" id="EvN-Vy-GIE">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="209.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zV2-fy-1C8">
+                                                    <rect key="frame" x="36" y="30" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="3Ot-Lj-3RH"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jxU-0R-iQJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2508" y="106.59670164917542"/>
         </scene>
         <!--Main Navigation Controller-->
         <scene sceneID="B4a-Fb-68x">
